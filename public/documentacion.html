@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Descargas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 450px;
+        }
+        h1 {
+            color: #007bff;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .btn {
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 14px;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.02);
+            opacity: 0.9;
+        }
+        .blue { background-color: #0d6efd; }
+        .green { background-color: #198754; }
+        .dark { background-color: #212529; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Centro de Descargas</h1>
+        <p>Haz clic en los botones para obtener tus archivos PDF.</p>
+        
+        <div class="btn-group">
+            <a href="docs/comandos.pdf" download="Comandos_Basicos_React.pdf" class="btn blue">
+                COMANDOS BÁSICOS DE REACT
+            </a>
+
+            <a href="docs/ieee.pdf" download="Estándar_IEEE.pdf" class="btn green">
+                ISO / ESTANDAR IEEE
+            </a>
+
+            <a href="docs/ActividadRequerimientos.pdf" download="Requerimientos.pdf" class="btn dark">
+                REQUERIMIENTOS FUNCIONALES Y NO FUNCIONALES
+            </a>
+
+            <a href="docs/sha_256.pdf" download="Algoritmo_SHA256.pdf" class="btn dark">
+                CÓDIGO PYTHON ALGORITMO SHA-256
+            </a>
+
+            <a href="/" class="btn dark">REGRESAR AL PROYECTO PRINCIPAL</a>
+        </div>
+    </div>
+</body>
+</html>
