@@ -1,11 +1,11 @@
-import Cara from './cara.jpeg';
+import cara2 from './cara2.PNG';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={Cara} className="App-avatar" alt="logo" />
+        <img src={cara2} className="App-avatar" alt="logo" />
         <h1 className="App-title">Evaluación parcial 1</h1>
         <h2 className="App-student">Alumno(a): Jesus Vazquez Hernandez</h2>
         
