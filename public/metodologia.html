@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodologías de Desarrollo de SW</title>
+    <!-- Importamos Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-900 flex justify-center py-10 px-4 min-h-screen font-sans">
+
+    <!-- Contenedor principal -->
+    <div class="w-full max-w-5xl text-center">
+        
+        <!-- SECCIÓN 1: Encabezado -->
+        <h1 class="text-2xl font-bold mb-6 tracking-wide">METODOLOGÍAS DE DESARROLLO DE SW</h1>
+        
+        <h2 class="text-xl font-medium mb-4">¿Qué es una metodología de desarrollo de software?</h2>
+        
+        <p class="text-sm text-gray-700 max-w-4xl mx-auto leading-relaxed mb-8">
+            Las metodologías de desarrollo de software son un conjunto de técnicas y métodos organizativos que se aplican para diseñar soluciones de software informático. El objetivo de las distintas metodologías es el de intentar organizar los equipos de trabajo para que estos desarrollen las funciones de un programa de la mejor manera posible.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-12 mb-6">TIPOS DE METODOLOGÍAS</h2>
+
+        <hr class="border-t border-gray-300 my-8">
+
+        <!-- SECCIÓN 2: Botones de Metodologías -->
+        <div class="flex flex-col gap-3 max-w-4xl mx-auto">
+            <!-- Fila 1 (4 botones) -->
+            <div class="flex flex-col sm:flex-row w-full gap-3">
+                <button onclick="openModal('Vista de Cascada', 'docs/cascada.png')" class="flex-1 py-2 px-4 rounded shadow-sm text-sm font-semibold tracking-wide transition-colors bg-blue-600 hover:bg-blue-700 text-white">
+                    CASCADA
+                </button>
+                <button onclick="openModal('Vista de Modelo V', 'docs/modelov.png')" class="flex-1 py-2 px-4 rounded shadow-sm text-sm font-semibold tracking-wide transition-colors bg-gray-500 hover:bg-gray-600 text-white">
+                    MODELO V
+                </button>
+                <button onclick="openModal('Vista de Ágiles', 'docs/agiles.png')" class="flex-1 py-2 px-4 rounded shadow-sm text-sm font-semibold tracking-wide transition-colors bg-green-700 hover:bg-green-800 text-white">
+                    ÁGILES
+                </button>
+                <button onclick="openModal('Vista de Scrum', 'docs/scrum.png')" class="flex-1 py-2 px-4 rounded shadow-sm text-sm font-semibold tracking-wide transition-colors bg-red-600 hover:bg-red-700 text-white">
+                    SCRUM
+                </button>
+            </div>
+            
+            <!-- Fila 2 (3 botones) -->
+            <div class="flex flex-col sm:flex-row w-full gap-3">
+                <button onclick="openModal('Vista de Kanban', 'docs/kanban.png')" class="flex-1 py-2 px-4 rounded shadow-sm text-sm font-semibold tracking-wide transition-colors bg-yellow-400 hover:bg-yellow-500 text-black">
+                    KANBAN
+                </button>
+                <button onclick="openModal('Vista de XP', 'docs/vistaxp.png')" class="flex-1 py-2 px-4 rounded shadow-sm text-sm font-semibold tracking-wide transition-colors bg-cyan-400 hover:bg-cyan-500 text-white">
+                    XP
+                </button>
+                <button onclick="openModal('Vista de Híbridas', 'docs/hibridas.png')" class="flex-1 py-2 px-4 rounded shadow-sm text-sm font-semibold tracking-wide transition-colors bg-gray-800 hover:bg-gray-900 text-white">
+                    HÍBRIDAS
+                </button>
+            </div>
+        </div>
+
+        <hr class="border-t border-gray-300 my-8">
+
+        <!-- SECCIÓN 3: Link a Tablero -->
+        <h3 class="text-xl font-medium mb-6">LINK A TABLERO DE TRABAJO</h3>
+        
+        <a href="https://tu-empresa.atlassian.net/jira/software/projects/TU-PROYECTO/boards/1" target="_blank" class="inline-block border border-blue-500 text-blue-500 hover:bg-blue-50 bg-white py-2 px-8 rounded text-sm mb-8 transition-colors">
+            ---- JIRA ----
+        </a>
+
+        <hr class="border-t border-gray-300 my-8">
+
+        <!-- SECCIÓN 4: Footer -->
+        <a href="https://react-proyect111.vercel.app/" class="inline-block border border-blue-500 text-blue-500 hover:bg-blue-50 bg-white py-2 px-8 rounded text-sm mb-8 transition-colors">
+            ---- REGRESAR MENÚ PRINCIPAL ----
+        </a>
+
+        <p class="text-lg font-medium mb-4">
+            Escribe la frase que colocaste en el tablero de metodología ágil:
+        </p>
+
+        <p class="text-lg mb-8">
+            EJEMPLO: " El Interés Tiene Pies "
+        </p>
+
+        <h3 class="text-2xl font-medium mt-4">
+            Alumno: Jesus Vazquez Hernandez 
+        </h3>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- COMPONENTE MODAL                           -->
+    <!-- ========================================== -->
+    <div id="modalOverlay" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50 transition-opacity duration-200 opacity-0">
+        <!-- Caja Blanca del Modal -->
+        <div id="modalBox" class="bg-white rounded-lg shadow-2xl w-11/12 max-w-4xl overflow-hidden transform scale-95 transition-transform duration-200">
+            
+            <!-- Cabecera del Modal -->
+            <div class="flex justify-between items-center px-6 py-4 border-b border-gray-200">
+                <h3 id="modalTitle" class="text-xl font-semibold text-gray-800"></h3>
+                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-700 focus:outline-none transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Cuerpo del Modal (Imagen) -->
+            <div class="p-6 flex justify-center bg-gray-50">
+                <img id="modalImage" src="" alt="Metodología" class="max-w-full max-h-[70vh] object-contain rounded drop-shadow-sm border border-gray-100" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para controlar el Modal -->
+    <script>
+        const overlay = document.getElementById('modalOverlay');
+        const box = document.getElementById('modalBox');
+        const titleEl = document.getElementById('modalTitle');
+        const imageEl = document.getElementById('modalImage');
+
+        function openModal(title, imageUrl) {
+            // Actualizar datos
+            titleEl.textContent = title;
+            imageEl.src = imageUrl;
+
+            // Mostrar contenedor
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+
+            // Forzar repintado para que la transición funcione
+            void overlay.offsetWidth;
+
+            // Animar entrada
+            overlay.classList.remove('opacity-0');
+            box.classList.remove('scale-95');
+            box.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            // Animar salida
+            overlay.classList.add('opacity-0');
+            box.classList.remove('scale-100');
+            box.classList.add('scale-95');
+
+            // Ocultar completamente después de la animación
+            setTimeout(() => {
+                overlay.classList.remove('flex');
+                overlay.classList.add('hidden');
+                imageEl.src = ''; // Limpiar la imagen
+            }, 200);
+        }
+
+        // Cerrar al hacer clic fuera de la caja blanca
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -18,6 +18,10 @@ function App() {
           <a className="App-link" href="/documentacion.html">
             DOCUMENTACION PARCIAL 1
           </a>
+          <h1> </h1>
+          <a className="App-link" href="/documentacion.html">
+            DOCUMENTACION PARCIAL 2
+          </a>
         </div>
       </header>
     </div>
