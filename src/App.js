@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
-import { jwtDecode } from "jwt-decode";
-import cara2 from './cara2.PNG'; // Tu foto
+import cara2 from './cara2.PNG'; 
 import './App.css';
 
-// --- VISTA DESPUÉS DE LOGUEARSE (DASHBOARD) ---
+// --- COMPONENTE DASHBOARD (Lo que se ve al entrar) ---
 const Dashboard = ({ user }) => {
   const handleRedirect = () => {
     window.open("https://utd-team-auguh.atlassian.net/jira/software/projects/DOOD/boards/1", "_blank", "noopener,noreferrer");
@@ -16,7 +15,11 @@ const Dashboard = ({ user }) => {
       <h1>Bienvenido(a), {user.name}</h1>
       <h2>EVALUACIÓN PARCIAL 3</h2>
       <div style={{ padding: '20px' }}>
-        <a href="/mi_documento.pdf" download="Manual_Jesus_Vazquez.pdf">
+        <a 
+          href="/mi_documento.pdf" 
+          download="Manual_Jesus_Vazquez.pdf"
+          className="download-link"
+        >
           <button style={{ padding: '10px', cursor: 'pointer' }}>
             DESCARGAR MI DOCUMENTO ERS
           </button>
@@ -33,24 +36,23 @@ const Dashboard = ({ user }) => {
   );
 };
 
-// --- APLICACIÓN PRINCIPAL ---
+// --- COMPONENTE PRINCIPAL ---
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
 
-  // IMPORTANTE: Pon aquí tu Client ID de Google Cloud
-  const clientId = "941946385897-fg0819kmq26rhoj75giiq6v9lupbcsp4.apps.googleusercontent.com"; 
+  // ID de cliente (Asegúrate de configurar el tuyo en Google Cloud Console)
+  const clientId = "941946385897-fg0819kmq26rhoj75giiq6v9lupbcsp4.apps.googleusercontent.com";
 
-  const onSuccess = (credentialResponse) => {
-    console.log("Login Exitoso");
-    // Decodificamos el token para sacar tu nombre real de Google
-    const decoded = jwtDecode(credentialResponse.credential);
-    setUserData({ name: decoded.name }); 
+  const onSuccess = (response) => {
+    console.log("Login Success:", response);
+    // Siguiendo la lógica de tu profesor:
+    setUserData({ name: "Jesus Vazquez" }); 
     setIsLoggedIn(true);
   };
 
   const onError = () => {
-    console.log("Error al iniciar sesión");
+    console.log("Login Failed");
   };
 
   return (
@@ -60,7 +62,7 @@ function App() {
           <Dashboard user={userData} />
         ) : (
           <header className="App-header">
-            <img src={cara2} className="App-avatar" alt="Foto Perfil" style={{ width: '250px', borderRadius: '20px' }}/>
+            <img src={cara2} className="App-avatar" alt="logo" style={{ width: '250px', borderRadius: '20px' }}/>
             <h1>ANÁLISIS Y DISEÑO DE SOFTWARE</h1>
             <h2>Alumno: Jesus Vazquez Hernandez</h2>
             
@@ -72,11 +74,12 @@ function App() {
               <a className="App-link" href="/metodologia.html">DOC PARCIAL 2</a>
             </div>
 
-            {/* AQUÍ APARECERÁ EL BOTÓN REAL */}
-            <div style={{ padding: '10px', background: 'white', borderRadius: '5px' }}>
+            {/* BOTÓN DE GOOGLE DIRECTO (Sin archivos externos) */}
+            <div style={{ margin: '20px', background: 'white', padding: '10px', borderRadius: '5px' }}>
               <GoogleLogin 
                 onSuccess={onSuccess} 
                 onError={onError}
+                useOneTap
               />
             </div>
           </header>
