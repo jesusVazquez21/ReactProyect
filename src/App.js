@@ -3,7 +3,6 @@ import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import cara2 from './cara2.PNG'; 
 import './App.css';
 
-// --- COMPONENTE DASHBOARD (Lo que se ve al entrar) ---
 const Dashboard = ({ user }) => {
   const handleRedirect = () => {
     window.open("https://utd-team-auguh.atlassian.net/jira/software/projects/DOOD/boards/1", "_blank", "noopener,noreferrer");
