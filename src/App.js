@@ -40,7 +40,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
 
-  const clientId = "47877156539-u5un3p40rufod3k6p6vvvto3t8bebm4q.apps.googleusercontent.com";
+  const clientId = "47877156539-ca8iq1h5t5mba6s1in6i82bavd6fgiro.apps.googleusercontent.com";
 
   const onSuccess = (response) => {
     console.log("Login Success:", response);
