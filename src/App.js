@@ -15,8 +15,8 @@ const Dashboard = ({ user }) => {
       <h2>EVALUACIÓN PARCIAL 3</h2>
       <div style={{ padding: '20px' }}>
         <a 
-          href="/mi_documento.pdf" 
-          download="Manual_Jesus_Vazquez.pdf"
+          href="/public/Especificaciones de Requerimientos de Software.pdf" 
+          download="Especificaciones de Requerimientos de Software.pdf"
           className="download-link"
         >
           <button style={{ padding: '10px', cursor: 'pointer' }}>
@@ -40,12 +40,10 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
 
-  // ID de cliente (Asegúrate de configurar el tuyo en Google Cloud Console)
-  const clientId = "941946385897-fg0819kmq26rhoj75giiq6v9lupbcsp4.apps.googleusercontent.com";
+  const clientId = "47877156539-u5un3p40rufod3k6p6vvvto3t8bebm4q.apps.googleusercontent.com";
 
   const onSuccess = (response) => {
     console.log("Login Success:", response);
-    // Siguiendo la lógica de tu profesor:
     setUserData({ name: "Jesus Vazquez" }); 
     setIsLoggedIn(true);
   };
@@ -69,8 +67,8 @@ function App() {
               <a className="App-link" href="https://www.linkedin.com/in/jesus-vazquez-hernandez-14bb793a4/" target="_blank" rel="noreferrer">
                 LINKEDIN PERFIL
               </a><br/>
-              <a className="App-link" href="/documentacion.html">DOC PARCIAL 1</a><br/>
-              <a className="App-link" href="/metodologia.html">DOC PARCIAL 2</a>
+              <a className="App-link" href="/documentacion.html">DOCUMENTACION PARCIAL 1</a><br/>
+              <a className="App-link" href="/metodologia.html">DOCUMENTACION PARCIAL 2</a>
             </div>
 
             {/* BOTÓN DE GOOGLE DIRECTO (Sin archivos externos) */}
