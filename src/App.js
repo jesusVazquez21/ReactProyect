@@ -15,7 +15,7 @@ const Dashboard = ({ user }) => {
       <h2>EVALUACIÓN PARCIAL 3</h2>
       <div style={{ padding: '20px' }}>
         <a 
-          href="/public/ERS.pdf" 
+          href="/ERS.pdf" 
           download="ERS.pdf"
           className="download-link"
         >
